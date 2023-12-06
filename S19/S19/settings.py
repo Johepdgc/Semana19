@@ -76,12 +76,12 @@ WSGI_APPLICATION = 'S19.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'practica19Pro3',
-        'ENFORCE_SCHEMA': False,
-        'CLIENT': {
-            'host': 'mongodb://localhost:27017/',
-        }
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'semana19Pro3',
+        'USER': 'root',
+        'PASSWORD': '00000000',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 

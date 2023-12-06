@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from appOne import views as appone
+from appOne.views import ProveedorListView, ProveedorCreateView, ProductoListView, ProductoCreateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,4 +24,10 @@ urlpatterns = [
     path('registro/', appone.reg_user),
     path('login/', appone.iniciar_sesion, name='login'),
     path('logout/', appone.cerrar_sesion, name='logout'),
+    path('proveedores/', ProveedorListView.as_view(), name='proveedores'),
+    path('add_proveedor/', ProveedorCreateView.as_view(), name='add_proveedor'),
+    path('productos/', ProductoListView.as_view(), name='productos'),
+    path('add_producto/', ProductoCreateView.as_view(), name='add_producto'),
+    path('proveedores/<int:pk>/', ProveedorListView.as_view(), name='proveedores-detail'),
+    path('productos/<int:pk>/', ProductoListView.as_view(), name='productos-detail'),
 ]
